@@ -1,5 +1,6 @@
 
 # _*_ coding:utf-8 _*_
+import streamlit as st
 import requests
 import pandas as pd
 from dotenv import load_dotenv
@@ -9,9 +10,8 @@ import os
 load_dotenv()
 
 SERVICE_KEY =os.getenv('SEOUL_API_KEY')
-print(SERVICE_KEY)
 
-"""
+
 data = None
 
 for j in range(1,3):
@@ -29,4 +29,5 @@ for j in range(1,3):
     
 data = data.reset_index(drop=True)
 data.head()
-"""
+
+data.to_csv('./seoul.csv',index =False)
